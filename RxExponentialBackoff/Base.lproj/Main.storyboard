@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxExponentialBackoff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-da-SJk">
+                                <rect key="frame" x="116.5" y="343" width="181" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgQ-iR-ujN">
+                                        <rect key="frame" x="34.5" y="0.0" width="112" height="30"/>
+                                        <state key="normal" title="Immediate Retry"/>
+                                        <connections>
+                                            <action selector="immediateRetry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkN-0B-vNn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3t-qX-BcT">
+                                        <rect key="frame" x="39" y="60" width="103" height="30"/>
+                                        <state key="normal" title="Constant Retry"/>
+                                        <connections>
+                                            <action selector="constantRetry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7be-jx-wY7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-1a-SGw">
+                                        <rect key="frame" x="30.5" y="120" width="120" height="30"/>
+                                        <state key="normal" title="Exponential Retry"/>
+                                        <connections>
+                                            <action selector="exponentialRetry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AM-5j-vgc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6T-Nv-79Z">
+                                        <rect key="frame" x="0.0" y="180" width="181" height="30"/>
+                                        <state key="normal" title="Exponential Random Retry"/>
+                                        <connections>
+                                            <action selector="exponentialWithRandomRetry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lgQ-pQ-klf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ae7-da-SJk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4aE-L5-HG3"/>
+                            <constraint firstItem="Ae7-da-SJk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRZ-jD-riD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="constantButton" destination="s3t-qX-BcT" id="OVw-Fe-Mgg"/>
+                        <outlet property="exponentialButton" destination="zJd-1a-SGw" id="WOF-5p-ePK"/>
+                        <outlet property="immediateButton" destination="kgQ-iR-ujN" id="bGh-MO-P86"/>
+                        <outlet property="randomButton" destination="U6T-Nv-79Z" id="Atd-bd-PLj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
